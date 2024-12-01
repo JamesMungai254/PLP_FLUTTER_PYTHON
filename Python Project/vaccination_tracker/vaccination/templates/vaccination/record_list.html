@@ -1,0 +1,52 @@
+<!-- vaccination/templates/vaccination/record_list.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Vaccination Records</h2>
+<table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+    <thead>
+        <tr style="background-color: #f2f2f2;">
+            <th style="padding: 10px; border: 1px solid #ddd;">Child Name</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Parent ID</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Vaccine Type</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Dose Number</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Date Administered</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for record in records %}
+        <tr>
+            <td style="padding: 10px; border: 1px solid #ddd;">{{ record.child.full_name }}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">{{ record.child.parent.parent_id }}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">{{ record.vaccine_type }}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">{{ record.dose_number }}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">{{ record.date_administered }}</td>
+        </tr>
+
+        
+        {% empty %}
+        <tr>
+            <td colspan="5" style="padding: 10px; text-align: center; border: 1px solid #ddd;">No vaccination records found.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div style="max-width: 800px; margin: 50px auto; text-align: center;">
+        
+    <p>Manage vaccination records and child registrations easily.</p>
+    
+    <div style="margin-top: 30px;">
+        <a href="{% url 'accounts:register_child' %}" 
+           style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-size: 16px;">
+            Register a Child
+        </a>
+    </div>
+    <div style="margin-top: 30px;">
+        <a href="{% url 'vaccination:add_record' %}" 
+           style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-size: 16px;">
+            Add vaccine record
+        </a>
+    </div>
+</div>
+{% endblock %}

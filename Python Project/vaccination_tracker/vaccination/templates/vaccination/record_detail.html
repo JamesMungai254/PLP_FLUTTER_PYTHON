@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="max-width: 600px; margin: 50px auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9;">
+    <h2 style="text-align: center; color: #007bff; margin-bottom: 20px;">Add Vaccination Record</h2>
+    <form method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" style="padding: 10px; background-color: #28a745; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
+            Save
+        </button>
+    </form>
+</div>
+{% endblock %}

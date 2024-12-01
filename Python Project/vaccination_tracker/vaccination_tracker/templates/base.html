@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vaccination Tracker</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'vaccination:record_list' %}">Vaccination Records</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'accounts:login' %}">Logout</a>
+            {% else %}
+            <a href="{% url 'accounts:login' %}">Login</a>
+            {% endif %}
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

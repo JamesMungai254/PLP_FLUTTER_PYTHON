@@ -1,0 +1,23 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Child</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Register Child</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+        <a href="{% url 'vaccination:record_list' %}" class="btn btn-secondary">Back to Records</a>
+    </div>
+</body>
+</html>

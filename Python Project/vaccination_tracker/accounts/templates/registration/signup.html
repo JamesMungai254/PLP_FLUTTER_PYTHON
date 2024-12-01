@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="max-width: 500px; margin: 50px auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9; text-align: left;">
+    <h2>{{ user_type }} Sign Up</h2>
+    <p>Please fill in the form below to create your account.</p>
+    <form method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" style="padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            Sign Up
+        </button>
+    </form>
+    <p style="margin-top: 15px; font-size: 14px;">
+        Already have an account? <a href="{% url 'login' %}" style="color: #007bff; text-decoration: none;">Log In</a>
+    </p>
+</div>
+{% endblock %}

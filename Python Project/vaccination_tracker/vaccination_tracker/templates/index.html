@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MRI - Vaccination Tracker</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+        main {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        main h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .cta {
+            margin-top: 30px;
+        }
+        .cta a {
+            display: inline-block;
+            padding: 15px 30px;
+            text-decoration: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+            margin: 5px;
+        }
+        .cta a:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to MRI</h1>
+        <nav>
+            <a href="{% url 'accounts:parent_signup' %}">Sign Up as Parent</a>
+            <a href="{% url 'accounts:facilitator_signup' %}">Sign Up as Facilitator</a>
+            <a href="{% url 'login' %}">Login</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Your Trusted Vaccination Tracker</h2>
+        <p>
+            Welcome to MRI, a powerful tool designed to help parents and facilitators manage children's vaccination records 
+            with ease. Stay on top of important milestones and ensure every child receives the necessary care.
+        </p>
+        <div class="cta">
+            <a href="{% url 'accounts:parent_signup' %}">Get Started as a Parent</a>
+            <a href="{% url 'accounts:facilitator_signup' %}">Join as a Facilitator</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 MRI Vaccination Tracker. All rights reserved.</p>
+    </footer>
+</body>
+</html>
